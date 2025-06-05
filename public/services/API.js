@@ -1,5 +1,5 @@
 export const API = {
-  baseURL: "/api",
+  baseURL: "/api/",
   getTopMovies: async () => {
     return await API.fetch("movies/top")
   },
@@ -16,7 +16,7 @@ export const API = {
     try {
       const queryString = args ? new URLSearchParams(args).toString() : ""
       const response = await fetch(
-        API.baseURL + serviceName + "?" + queryString
+        `${API.baseURL}${serviceName}${queryString ? `?${queryString}` : ""}`
       )
       const result = await response.json()
       return result
