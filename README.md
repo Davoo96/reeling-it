@@ -13,7 +13,7 @@ Run `go mod init frontendmasters.com/reelingit` to create the module.
 
 Install the dependencies
 
-```
+```mdx
 go get github.com/joho/godotenv
 go get github.com/lib/pq
 ```
@@ -2219,7 +2219,7 @@ In _app.js_ we will now add:
 
 To implement JWT, we need to install a package
 
-```
+```mdx
 go get -u github.com/golang-jwt/jwt/v5
 ```
 
@@ -2805,15 +2805,15 @@ this.querySelector("#btnWatchlist").addEventListener("click", () => {
 })
 ```
 
-# Intermediate Course
+## Intermediate Course
 
-## I-Passkeys
+### I-Passkeys
 
-### I1 - Adding new dependences
+#### I1 - Adding new dependences
 
 Run in the console
 
-```
+```mdx
 go get "github.com/go-webauthn/webauthn/webauthn"
 ```
 

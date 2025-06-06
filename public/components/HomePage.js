@@ -9,13 +9,6 @@ export default class HomePage extends HTMLElement {
     const randomMovies = await API.getRandomMovies()
     renderMoviesInList(randomMovies, this.querySelector("#random ul"))
 
-    const movieItem = this.querySelectorAll("[data-movie]")
-    movieItem.forEach((el) => {
-      el.addEventListener("click", (e) => {
-        e.preventDefault()
-      })
-    })
-
     function renderMoviesInList(movies, ul) {
       ul.innerHTML = ""
       movies.forEach((movie) => {

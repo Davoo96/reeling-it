@@ -20,9 +20,11 @@ const Router = {
     }
     const routePath = route.includes("?") ? route.split("?")[0] : route
     let pageElement = null
+    let needsLogin = false
     for (const r of routes) {
       if (typeof r.path === "string" && r.path === routePath) {
         pageElement = new r.component()
+        needsLogin = r.loggedIn === true
         break
       } else if (r.path instanceof RegExp) {
         const match = r.path.exec(route)
@@ -34,6 +36,14 @@ const Router = {
         }
       }
     }
+
+    if (pageElement) {
+      if (needsLogin && app.Store.loggedIn == false) {
+        app.Router.go("/account/login")
+        return
+      }
+    }
+
     if (pageElement == null) {
       pageElement = document.createElement("h1")
       pageElement.textContent = "Page not found"
