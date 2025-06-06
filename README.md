@@ -1608,7 +1608,7 @@ In _app.js_ add the new functions to the app object:
 
 Let's add a new dependency, executing:
 
-```
+```mdx
 go get "golang.org/x/crypto/bcrypt"
 ```
 
